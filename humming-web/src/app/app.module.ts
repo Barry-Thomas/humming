@@ -6,9 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { EditorComponent } from './editor/editor.component';
 import { MessageComponent } from './message/message.component';
+import { MenuComponent } from './menu/menu.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, EditorComponent, MessageComponent],
+  declarations: [AppComponent, EditorComponent, MessageComponent, MenuComponent, SidebarComponent],
   imports: [
     BrowserModule,
     FormsModule,
