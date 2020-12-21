@@ -7,11 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'Humming Web App';
-    name = 'Let"s see';
+    messages = [];
 
     onMessageCreated(messageData: { message: string; author: string }) {
         console.log(
             `A message recieved from ${messageData.author}:\t ${messageData.message}`
         );
+
+        this.messages.push({
+            author: messageData.author,
+            messageContent: messageData.message,
+        });
+
+        console.log('messages:');
+        console.log(this.messages);
     }
 }
