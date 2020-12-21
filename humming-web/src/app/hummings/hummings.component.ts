@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-hummings',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./hummings.component.css'],
 })
 export class HummingsComponent implements OnInit {
+    @Input() author: string = '';
     constructor() {
         console.log('HummingsComponent constructor');
     }
@@ -28,7 +29,8 @@ export class HummingsComponent implements OnInit {
 
     onMessageCreated(messageData: { message: string; author: string }) {
         this.messages.push({
-            author: messageData.author,
+            // author: messageData.author,
+            author: this.author,
             messageContent: messageData.message,
         });
     }
