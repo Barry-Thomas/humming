@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'Humming Web App';
-    messages = [];
+    messages: { author: string; messageContent: string }[] = [];
 
     onMessageCreated(messageData: { message: string; author: string }) {
         console.log(
