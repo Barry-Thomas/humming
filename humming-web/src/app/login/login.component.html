@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="form-group">
+                <label for="username">User Name:</label>
+                <input
+                    type="text"
+                    id="username"
+                    [(ngModel)]="userName"
+                    class="form-control"
+                />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <input
+                    type="password"
+                    id="passwordInput"
+                    [(ngModel)]="password"
+                    class="form-control"
+                />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-2">
+            <div class="form-group">
+                <button
+                    class="btn btn-primary form-control"
+                    (click)="onLoginClick()"
+                >
+                    Login
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

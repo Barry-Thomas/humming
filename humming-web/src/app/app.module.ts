@@ -8,9 +8,11 @@ import { EditorComponent } from './editor/editor.component';
 import { MessageComponent } from './message/message.component';
 import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { HummingsComponent } from './hummings/hummings.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, EditorComponent, MessageComponent, MenuComponent, SidebarComponent],
+  declarations: [AppComponent, EditorComponent, MessageComponent, MenuComponent, SidebarComponent, HummingsComponent, LoginComponent],
   imports: [
     BrowserModule,
     FormsModule,

@@ -1,37 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     title = 'Humming Web App';
-    messages: { author: string; messageContent: string }[] = [];
+    userName: string;
+    showLogin: boolean;
 
-    onMessageCreated(messageData: { message: string; author: string }) {
-        console.log(
-            `A message recieved from ${messageData.author}:\t ${messageData.message}`
-        );
-
-        this.messages.push({
-            author: messageData.author,
-            messageContent: messageData.message,
-        });
-
-        console.log('messages:');
-        console.log(this.messages);
+    constructor() {
+        console.log('constructor called, set username to empty, show login!');
+        this.userName = '';
+        this.showLogin = true;
     }
 
-    ngOnInit() {
-        this.messages.push({
-            author: 'steve',
-            messageContent: 'pizza is here',
-        });
-        this.messages.push({ author: 'joe', messageContent: 'bring pizza' });
-        this.messages.push({
-            author: 'steve',
-            messageContent: 'on the way home!',
-        });
+    ngOnInit(): void {
+        console.log('init called');
+    }
+
+    onUserLoggedIn(userName: string) {
+        if (userName != '') {
+            console.log('userName: ' + this.userName);
+            this.userName = userName;
+            console.log('hide login');
+            this.showLogin = false;
+        } else {
+            console.log("user didn't login");
+        }
     }
 }
