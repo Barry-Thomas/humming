@@ -1,3 +1,18 @@
-<input type="text" [(ngModel)]="name" />
-
-<p>{{ name }}</p>
+<div class="container">
+    <div class="row navbar top">
+        <div class="col"></div>
+        <div class="col-6"></div>
+        <div class="col">
+            <h2>Humming</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6"></div>
+        <div class="col">
+            <app-editor
+                (messageCreated)="onMessageCreated($event)"
+            ></app-editor>
+        </div>
+    </div>
+</div>

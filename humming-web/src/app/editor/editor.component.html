@@ -1,1 +1,6 @@
 <p>editor works!</p>
+<label>Enter message</label>
+<input class="form-control" type="text" [(ngModel)]="message" />
+<button class="btn btn-primary" (click)="createMessage()">
+    Create message
+</button>
