@@ -1,5 +1,22 @@
-<label>Enter message</label>
-<input class="" type="text" [(ngModel)]="message" />
-<button class="btn btn-primary" (click)="createMessage()">
-    Create message
-</button>
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label for="messageInput">Enter message</label>
+            <input
+                class=""
+                type="text"
+                id="messageInput"
+                [(ngModel)]="message"
+                class="form-control"
+            />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-10"></div>
+    <div class="col-2">
+        <button class="btn btn-primary form-control" (click)="createMessage()">
+            Create message
+        </button>
+    </div>
+</div>

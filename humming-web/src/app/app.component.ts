@@ -22,4 +22,16 @@ export class AppComponent {
         console.log('messages:');
         console.log(this.messages);
     }
+
+    ngOnInit() {
+        this.messages.push({
+            author: 'steve',
+            messageContent: 'pizza is here',
+        });
+        this.messages.push({ author: 'joe', messageContent: 'bring pizza' });
+        this.messages.push({
+            author: 'steve',
+            messageContent: 'on the way home!',
+        });
+    }
 }
