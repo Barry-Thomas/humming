@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
         if (userName != '') {
             console.log('userName: ' + this.userName);
             this.userName = userName;
+            
             console.log('hide login');
             this.showLogin = false;
         } else {
