@@ -12,13 +12,21 @@ import { HummingsComponent } from './hummings/hummings.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, EditorComponent, MessageComponent, MenuComponent, SidebarComponent, HummingsComponent, LoginComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    //   AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        EditorComponent,
+        MessageComponent,
+        MenuComponent,
+        SidebarComponent,
+        HummingsComponent,
+        LoginComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        //   AppRoutingModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

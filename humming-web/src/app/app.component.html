@@ -2,8 +2,8 @@
     <a href="#" class="navbar-brand">Humming</a>
 </nav>
 
-<app-hummings *ngIf="userName != ''" [author]="userName"></app-hummings>
+<app-hummings *ngIf="!showLogin" [author]="userName"></app-hummings>
 <app-login
-    *ngIf="userName === ''"
+    *ngIf="showLogin"
     (userLoggedIn)="onUserLoggedIn($event)"
 ></app-login>

@@ -14,8 +14,8 @@ export class UsersService {
         let user = this.validUsers.find((u) => u.userName == userName);
 
         console.log(user);
+
         if (user && user.password == password) {
-            console.log('user valid');
             this.currentUser = user;
             return user;
         }

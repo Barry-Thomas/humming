@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UsersService } from '../shared/user.service';
 
 @Component({
     selector: 'app-login',
@@ -8,27 +9,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class LoginComponent implements OnInit {
     userName = '';
     password = '';
-    validUsers: { userName: string; password: string }[] = [
-        { userName: 'barry', password: 'b@rry' },
-        { userName: 'steve', password: 'st3v3' },
-        { userName: 'pete', password: 'p3t3' },
-    ];
-
     @Output() userLoggedIn: EventEmitter<string> = new EventEmitter<string>();
 
-    constructor() {}
+    constructor(private userService: UsersService) {}
 
     ngOnInit(): void {}
 
     onLoginClick() {
-        let user = this.validUsers.find((u) => u.userName == this.userName);
+        this.userService.login(this.userName, this.password);
 
-        console.log(user);
-        if (user && user.password == this.password) {
-            console.log('user valid');
-            this.userLoggedIn.emit(user.userName);
+        let currentUser = this.userService.getCurrentUser();
+        if (currentUser.userName == this.userName) {
+            this.userLoggedIn.emit(this.userName);
         } else {
-            this.userName = '';
             this.password = '';
         }
     }
